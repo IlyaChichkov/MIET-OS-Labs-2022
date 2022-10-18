@@ -1,0 +1,17 @@
+#!/bin/bash
+
+fname="result.txt"
+
+touch $fname
+while true
+do
+        curdate=$( date +%H_%M_%S )
+        cs_data=""
+        cs_data=$( head -n 1 color_data )
+        echo "Write..."
+        echo $cs_data
+        echo -e "Date\n$curdate\nData:$cs_data" >> $fname
+        echo $cs_data >> $fname
+        echo "Done"
+        sleep 1
+done
